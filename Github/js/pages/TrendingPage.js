@@ -29,7 +29,7 @@ export default class TrendingPage extends Component {
                                 tintColor: 'red',
                                 updateTime: new Date().getTime(),
                             }
-                        })
+                        });
                     }}
                 />
             </View>

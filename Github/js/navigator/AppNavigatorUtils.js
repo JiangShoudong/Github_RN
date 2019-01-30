@@ -8,6 +8,9 @@
 export default class NavigationUtil {
 
 
+    static goPage({navigation}, routeName) {
+        navigation.navigate(routeName)
+    }
     /**
      * 返回到上一页
      * @param navigation

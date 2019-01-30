@@ -1,7 +1,7 @@
 /**
- * HomePage.js
+ * MyPage.js
  *
- * Created by 姜守栋 on 2019/1/29.
+ * Created by 姜守栋 on 2019/1/30.
  * Copyright © 2018年 jiangshoudong. All rights reserved.
  */
 
@@ -11,17 +11,16 @@ import {
     View,
     Text,
 } from 'react-native';
-import DynamicTabNavigator from "../navigator/DynamicTabNavigator";
 
-export default class HomePage extends Component {
+export default class MyPage extends Component {
 
-    constructor(props) {
-        super(props);
-        console.disableYellowBox = true;
-    }
+
     render() {
-
-        return <DynamicTabNavigator/>;
+        return (
+            <View style={styles.container}>
+                <Text style={styles.home}>MyPage</Text>
+            </View>
+        );
     }
 }
 

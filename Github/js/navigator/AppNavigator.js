@@ -5,17 +5,47 @@
  * Copyright © 2018年 jiangshoudong. All rights reserved.
  */
 
-import React, {Component} from 'react';
 import {
-    StyleSheet,
-    View,
-} from 'react-native';
+    createStackNavigator,
+    createMaterialTopTabNavigator,
+    createBottomTabNavigator,
+    createSwitchNavigator,
+    createAppContainer,
+} from 'react-navigation';
 
-export default class AppNavigator extends Component {
-    render() {
-        return (
-            <View style={{flex: 1}}>
-            </View>
-        );
-    }
-}
+import WelcomePage from "../pages/WelcomePage";
+import HomePage from "../pages/HomePage";
+import DetailPage from "../pages/DetailPage";
+
+const InitNavigator = createStackNavigator({
+    WelcomePage: {
+        screen: WelcomePage,
+        navigationOptions: {
+            header: null,
+        },
+    },
+});
+
+const MainNavigator = createStackNavigator({
+    HomePage: {
+        screen: HomePage,
+        navigationOptions: {
+            header: null,
+        },
+    },
+    DetailPage: {
+        screen: DetailPage,
+        navigationOptions: {
+            header: null,
+        },
+    },
+});
+
+export default createAppContainer(createSwitchNavigator({
+    Init: InitNavigator,
+    Main: MainNavigator,
+}, {
+    defaultNavigationOptions: {
+        header: null,
+    },
+}));

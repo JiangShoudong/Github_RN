@@ -76,7 +76,7 @@ const TABS = {
     },
 };
 
-export default class DynamicTabNavigator extends Component {
+class DynamicTabNavigator extends Component {
     constructor(props) {
         super(props);
         console.disableYellowBox = true;
@@ -124,3 +124,9 @@ class TabBarComponent extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    theme: state.theme.theme,
+});
+
+export default connect(mapStateToProps)(DynamicTabNavigator);
